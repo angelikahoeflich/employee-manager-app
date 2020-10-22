@@ -7,7 +7,25 @@ class App extends Component {
   constructor(){
     super()
 
-    this.state = data
+    this.state = {
+      employees: data,
+      index:0
+    }
+      this.nextPage = this.nextPage.bind(this);
+      this.prevPage = this.prevPage.bind(this)
+  }
+
+
+  nextPage(){
+    this.setState({
+      index: this.state.index + 1
+    })
+  }
+
+  prevPage(){
+    this.setState({
+      index:this.state.index - 1
+    })
   }
  
  render(){
@@ -15,13 +33,14 @@ class App extends Component {
     <div>
       <header className='Home'>Home</header>
       
-      <EmployeeList/>
+      <EmployeeList employees={this.state.employees} index={this.state.index}/>
+
            <div className="control">
-          <button>Prev</button>
+          <button onClick={this.prevPage}>Prev</button>
           <button>Edit</button>
           <button>Delete</button>
           <button>New</button>
-          <button>Next</button>
+          <button onClick={this.nextPage}>Next</button>
         </div>
 
     </div>

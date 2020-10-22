@@ -1,21 +1,22 @@
 import React from 'react';
 
-function EmployeeList(){
+function EmployeeList(props){
  
+  const movies = props.employees[props.index].favoriteMovies.map((e, index)=> <li key={index}>{e}</li>)
   
     return(
     <div className="employee-list">
-        <h1>Name:</h1>
-        <p>From: employee.location </p>
-        <p>Job title: employee.title</p>
-        <p>Employer : employee.empoloyer</p>
+        <h1>{props.employees[props.index].name.first} {props.employees[props.index].name.last}</h1>
+        <h2>Page {props.index+1}  / {props.employees.length}</h2>
+        <p>From: {props.employees[props.index].city}, {props.employees[props.index].country} </p>
+       <p>Employer : {props.employees[props.index].employer}</p>
+       <p>Job title: {props.employees[props.index].title}</p>
+        
      
       <div className="favorite-movies">
-          <p>Davorite Movies: employee.favorite-movies</p>
+          <p>Favorite Movies:</p>
           <ol>
-            <li>Movie </li>
-            <li>Movie</li>
-            <li>Movie</li>
+            {movies}
           </ol>
         </div>
       </div>
