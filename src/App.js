@@ -15,7 +15,8 @@ class App extends Component {
     }
 
       this.nextPage = this.nextPage.bind(this);
-      this.prevPage = this.prevPage.bind(this)
+      this.prevPage = this.prevPage.bind(this);
+      this.deletePage = this.deletePage.bind(this)
   }
 
 
@@ -35,7 +36,15 @@ class App extends Component {
     })
   }
 }
- 
+
+deletePage(){
+  let newList = this.state.employees.filter((e,index) => index !== this.state.index)
+  this.setState({
+    employees: newList
+  })
+}
+
+
  render(){
   return (
     <div>
@@ -43,7 +52,7 @@ class App extends Component {
       
       <EmployeeList employees={this.state.employees} index={this.state.index}/>
 
-      <Controls nextPage={this.nextPage} prevPage={this.prevPage}/>
+      <Controls nextPage={this.nextPage} prevPage={this.prevPage} deletePage={this.deletePage}/>
 
     </div>
   );

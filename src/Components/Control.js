@@ -4,11 +4,13 @@ function Control(props) {
     return (
       <div>
         <div className="control">
-          <button onClick={props.prevPage}>Prev</button>
+          <button onClick={props.prevPage}> ← Prev</button>
+          <div>
           <button>Edit</button>
-          <button>Delete</button>
+          <button onClick={props.deletePage}> Delete</button>
           <button>New</button>
-          <button onClick={props.nextPage}>Next</button>
+          </div>
+          <button onClick={props.nextPage}>Next → </button>
         </div>
       </div>
     )

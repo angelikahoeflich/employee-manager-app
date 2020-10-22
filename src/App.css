@@ -5,3 +5,43 @@
   line-height: 1.4;
 }
 
+.Home{
+  width:100vw;
+  background-color:lightblue;
+  min-height:30px;
+  padding:10px;
+
+}
+
+.Employee-List{
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: lightgrey;
+  padding:30px;
+}
+
+.favorite-movies li {
+  margin-left:30px;
+}
+
+.control{
+  text-align:center;
+  max-width: 600px;
+  margin: 0 auto;
+  display:flex;
+  justify-content: space-around;
+}
+
+.control button{  
+  border-radius:10px;
+  border:1px solid #333;
+  padding:5px 10px;
+  background-color:#fff;
+  margin: 0 5px;
+}
+.control > div > button{
+  background-color: lightblue;
+  color:#fff;
+
+}
+
